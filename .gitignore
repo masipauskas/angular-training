@@ -1,5 +1,5 @@
 .DS_STORE
-.iml
+*.iml
 /dist/
 bazel-*
 e2e_test.*
