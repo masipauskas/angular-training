@@ -1,0 +1,5 @@
+<p>
+  <input type="button" class="btn btn-primary" value="Start" [disabled]="started" (click)="onStart()"/>
+  &nbsp;
+  <input type="button" class="btn btn-danger" value="Stop" [disabled]="!started" (click)="onStop()"/>
+</p>
