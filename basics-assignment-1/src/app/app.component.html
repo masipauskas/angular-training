@@ -11,5 +11,18 @@
       <p>Feel free to create more components, nest them into each other or play around with different types of selectors!</p>
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>
+        <a class="btn btn-primary" (click)="onToggle()">Toggle</a>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-success-alert [message]=success></app-success-alert>
+      <app-warning-alert [message]=warning></app-warning-alert>
+    </div>
+  </div>
 </div>
 
