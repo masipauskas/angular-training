@@ -1,0 +1,8 @@
+.white {
+  color: white;
+  list-style-position: inside;
+}
+
+li {
+  list-style-position: inside;
+}
