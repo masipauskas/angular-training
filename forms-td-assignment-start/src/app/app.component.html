@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!-- Add a Form with the following Inputs (and Validators)
+           1) Mail address (should not be empty and should be an email address)
+           2) A Dropdown which allows the user to select from three different Subscriptions ("Basic", "Advanced", "Pro")
+              Set "Advanced" as Default
+           3) A Password field (should not be empty)
+           4) A Submit Button
+
+           Display a warning message if the Form is invalid AND was touched. Display a warning message below each input if it's invalid.
+
+           Upon submitting the form, you should simply print the Value of the Form to the Console.
+           Optionally, display it in your template.
+      -->
+      <form #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="form-control" placeholder="Email Address" required email
+                 [ngModel] #emailControl="ngModel" name="email"
+          />
+          <div class="alert alert-danger" role="alert" [hidden]="emailControl.valid || emailControl.pristine">
+            <p>Please enter a valid email</p>
+          </div>
+
+          <label for="subscriptions">Subscriptions</label>
+          <select type="select" class="form-control" id="subscriptions" required
+                  [ngModel]="subscription" name="subscription"
+          >
+            <option *ngFor="let subscription of subscriptions" [value]="subscription">{{subscription}}</option>
+          </select>
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" required
+                 [ngModel] #passwordControl="ngModel" name="password"
+          />
+
+          <div class="alert alert-danger" role="alert" [hidden]="passwordControl.valid || passwordControl.pristine">
+            <p>Please enter a password</p>
+          </div>
+
+          <hr />
+          <button class="btn btn-primary" type="Submit" [disabled]="!form.form.valid">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
